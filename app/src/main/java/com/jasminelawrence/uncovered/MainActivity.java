@@ -32,8 +32,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     TextView results;
 
-    String query = "https://content.guardianapis.com/search?q=homelessANDsan%20francisco&showfields=starRating,headline,thumnail,byline,short-url&order-by=relevance&format=json&api-key=bd330cde-7007-47b8-9a51-7a4ad02d1583&page-size=20&tag=society/homelessness";
-
+    String query = "https://content.guardianapis.com/search?q=homelessANDsan%20francisco&show-fields=headline,short-url&order-by=relevance&format=json&api-key=bd330cde-7007-47b8-9a51-7a4ad02d1583&page-size=5&show-references=author&tag=society/homelessness&show-tags=contributor";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

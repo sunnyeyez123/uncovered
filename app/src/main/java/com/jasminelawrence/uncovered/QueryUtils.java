@@ -145,7 +145,6 @@ public final class QueryUtils {
      * parsing the given JSON response.
      */
 
-    //TODO: Update JSON parsing for the guardian website!
     private static List<Article> extractFeatureFromJson(String ArticlesJSON) {
         // If the JSON string is empty or null, then return early.
         if (TextUtils.isEmpty(ArticlesJSON)) {
@@ -184,6 +183,7 @@ public final class QueryUtils {
 
                 // Extract the value for the key called "place"
                 String section = currentArticle.getString("sectionName");
+                //TODO:format date
 
                 // Extract the value for the key called "place"
                 String published = currentArticle.getString("webPublicationDate");
@@ -191,15 +191,30 @@ public final class QueryUtils {
                 // Extract the value for the key called "place"
                 String url = currentArticle.getString("webUrl");
 
-                //TODO: replace with correct field for author. This is not always available
-                // Extract the value for the key called "place"
-                String author = currentArticle.getString("type");
 
 
                 // Create a new {@link Article} object with the title, author, date published,
                 // and url from the JSON response.
-                Article article = new Article( title, section,author,published,url);
+                Article article = new Article( title, section,published,url);
 
+                //TODO: replace with correct field for author. This is not always available
+
+
+                // Extract the value for the key called "place"
+                JSONArray tags = currentArticle.getJSONArray("tags");
+
+                // Extract the value for the key called "place"
+
+                if(tags != null && tags.length() > 0 ){
+
+                    // Extract the value for the key called "place"
+                    String author =tags.getJSONObject(0).getString("webTitle");
+
+                    // Create a new {@link Article} object with the title, author, date published,
+                    // and url from the JSON response.
+                    article = new Article( title, section,author,published,url);
+
+                }
 
                 // Add the new {@link Article} to the list of Articles.
                 articleList.add(article);

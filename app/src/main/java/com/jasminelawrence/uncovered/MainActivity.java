@@ -28,11 +28,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private static final int Article_LOADER_ID = 1;
 
     ProgressBar loadingIndicator;
-    private ArticleAdapter mAdapter;
-
     TextView results;
-
-    String query = "https://content.guardianapis.com/search?q=homelessANDsan%20francisco&show-fields=headline,short-url&order-by=relevance&format=json&api-key=bd330cde-7007-47b8-9a51-7a4ad02d1583&page-size=5&show-references=author&tag=society/homelessness&show-tags=contributor";
+    String query = "https://content.guardianapis.com/search?q=homelessANDsan%20francisco&show-fields=headline,short-url&order-by=relevance&format=json&api-key=bd330cde-7007-47b8-9a51-7a4ad02d1583&page-size=10&show-references=author&tag=society/homelessness&show-tags=contributor";
+    private ArticleAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +71,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         });
 
 
-
-
-// Get a reference to the ConnectivityManager to check state of network connectivity
+        // Get a reference to the ConnectivityManager to check state of network connectivity
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         // Get details on the currently active default data network

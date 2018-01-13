@@ -139,7 +139,6 @@ public final class QueryUtils {
     }
 
 
-
     /**
      * Return a list of {@link Article} objects that has been built up from
      * parsing the given JSON response.
@@ -171,19 +170,18 @@ public final class QueryUtils {
             // For each Article in the ArticleArray, create an {@link Article} object
             for (int i = 0; i < articlesArray.length(); i++) {
 
-               // Get a single Article at position i within the list of Articles
+                // Get a single Article at position i within the list of Articles
                 JSONObject currentArticle = articlesArray.getJSONObject(i);
 
                 // For a given Article, extract the JSONObject associated with the
                 // key called "results", which represents a list of all properties
                 // for that Article.
-
                 // Extract the value for the key called "place"
-                String title = currentArticle.getString("webTitle");
+                JSONObject fields = currentArticle.getJSONObject("fields");
+                String title = fields.getString("headline");
 
                 // Extract the value for the key called "place"
                 String section = currentArticle.getString("sectionName");
-                //TODO:format date
 
                 // Extract the value for the key called "place"
                 String published = currentArticle.getString("webPublicationDate");
@@ -194,22 +192,22 @@ public final class QueryUtils {
 
                 // Create a new {@link Article} object with the title, author, date published,
                 // and url from the JSON response.
-                Article article = new Article( title, section,published,url);
-                
+                Article article = new Article(title, section, published, url);
+
 
                 // Extract the value for the key called "place"
                 JSONArray tags = currentArticle.getJSONArray("tags");
 
                 // Extract the value for the key called "place"
 
-                if(tags != null && tags.length() > 0 ){
+                if (tags != null && tags.length() > 0) {
 
                     // Extract the value for the key called "place"
-                    String author =tags.getJSONObject(0).getString("webTitle");
+                    String author = tags.getJSONObject(0).getString("webTitle");
 
                     // Create a new {@link Article} object with the title, author, date published,
                     // and url from the JSON response.
-                    article = new Article( title, section,published,author,url);
+                    article = new Article(title, section, published, author, url);
 
                 }
 
@@ -227,8 +225,6 @@ public final class QueryUtils {
         // Return the list of Articles
         return articleList;
     }
-
-
 
 
 }

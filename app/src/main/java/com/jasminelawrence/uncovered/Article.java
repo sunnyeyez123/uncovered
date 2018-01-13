@@ -9,27 +9,19 @@ public class Article {
     private String mTitle, mSection, mAuthor, mPublished, mUrl;
 
 
-    public Article(String title, String section, String url){
-        mTitle = title;
-        mSection = section;
-     mUrl = url;
-
-
-    }
-
-    public Article(String title, String section,String author,String url){
+    public Article(String title, String section,String published,String author,String url){
         mTitle = title;
         mSection = section;
         mUrl = url;
         mAuthor = author;
+        mPublished=published;
 
     }
 
-    public Article(String title, String section, String author, String published,String url){
+    public Article(String title, String section, String published,String url){
         mTitle = title;
         mSection = section;
         mUrl = url;
-        mAuthor = author;
         mPublished=published;
     }
 

@@ -195,9 +195,7 @@ public final class QueryUtils {
                 // Create a new {@link Article} object with the title, author, date published,
                 // and url from the JSON response.
                 Article article = new Article( title, section,published,url);
-
-                //TODO: replace with correct field for author. This is not always available
-
+                
 
                 // Extract the value for the key called "place"
                 JSONArray tags = currentArticle.getJSONArray("tags");
@@ -211,7 +209,7 @@ public final class QueryUtils {
 
                     // Create a new {@link Article} object with the title, author, date published,
                     // and url from the JSON response.
-                    article = new Article( title, section,author,published,url);
+                    article = new Article( title, section,published,author,url);
 
                 }
 

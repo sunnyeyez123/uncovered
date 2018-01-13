@@ -75,9 +75,17 @@ public class ArticleAdapter  extends ArrayAdapter<Article> {
         // Get the version name from the current AndroidFlavor object and
         // set this text on the name TextView
 
+        String date = currentArticle.getPublished();
 
-        String formattedDate[]= currentArticle.getPublished().split("T");
-        publishedTextView.setText(formattedDate[0]);
+        if(date != null && date.length() > 0){
+            String formattedDate[]= date.split("T");
+            publishedTextView.setText(formattedDate[0]);
+
+        }else{
+            publishedTextView.setText(date);
+        }
+
+
 
 
 

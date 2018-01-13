@@ -192,7 +192,6 @@ public final class QueryUtils {
                 String url = currentArticle.getString("webUrl");
 
 
-
                 // Create a new {@link Article} object with the title, author, date published,
                 // and url from the JSON response.
                 Article article = new Article( title, section,published,url);

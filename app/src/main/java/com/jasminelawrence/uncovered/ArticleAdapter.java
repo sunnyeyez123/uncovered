@@ -10,7 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Jasmine on 1/12/18.
@@ -73,7 +75,9 @@ public class ArticleAdapter  extends ArrayAdapter<Article> {
         // Get the version name from the current AndroidFlavor object and
         // set this text on the name TextView
 
-        publishedTextView.setText(currentArticle.getPublished());
+
+        String formattedDate[]= currentArticle.getPublished().split("T");
+        publishedTextView.setText(formattedDate[0]);
 
 
 
@@ -132,4 +136,6 @@ public class ArticleAdapter  extends ArrayAdapter<Article> {
 
         return magnitude1Color;
     }*/
+
+
 }

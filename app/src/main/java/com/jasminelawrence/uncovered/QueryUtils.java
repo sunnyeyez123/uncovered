@@ -29,160 +29,6 @@ public final class QueryUtils {
 
     public static final String LOG_TAG = MainActivity.class.getName();
 
-    private static final String testJSON = "{\n" +
-            "  \"response\": {\n" +
-            "    \"status\": \"ok\",\n" +
-            "    \"userTier\": \"developer\",\n" +
-            "    \"total\": 24,\n" +
-            "    \"startIndex\": 1,\n" +
-            "    \"pageSize\": 20,\n" +
-            "    \"currentPage\": 1,\n" +
-            "    \"pages\": 2,\n" +
-            "    \"orderBy\": \"relevance\",\n" +
-            "    \"results\": [\n" +
-            "      {\n" +
-            "        \"id\": \"us-news\\/2017\\/apr\\/24\\/building-affordable-housing-is-all-but-impossible-in-californias-bay-area\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"us-news\",\n" +
-            "        \"sectionName\": \"US news\",\n" +
-            "        \"webPublicationDate\": \"2017-04-24T15:18:10Z\",\n" +
-            "        \"webTitle\": \"Building affordable housing is all but impossible in California\\u2019s Bay Area | Letter\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/us-news\\/2017\\/apr\\/24\\/building-affordable-housing-is-all-but-impossible-in-californias-bay-area\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/us-news\\/2017\\/apr\\/24\\/building-affordable-housing-is-all-but-impossible-in-californias-bay-area\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/news\",\n" +
-            "        \"pillarName\": \"News\"\n" +
-            "      },\n" +
-            "      {\n" +
-            "        \"id\": \"society\\/2018\\/jan\\/03\\/windsor-council-calls-removal-homeless-people-before-royal-wedding\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"society\",\n" +
-            "        \"sectionName\": \"Society\",\n" +
-            "        \"webPublicationDate\": \"2018-01-03T18:12:48Z\",\n" +
-            "        \"webTitle\": \"Windsor council leader calls for removal of homeless before royal wedding\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/society\\/2018\\/jan\\/03\\/windsor-council-calls-removal-homeless-people-before-royal-wedding\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/society\\/2018\\/jan\\/03\\/windsor-council-calls-removal-homeless-people-before-royal-wedding\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/news\",\n" +
-            "        \"pillarName\": \"News\"\n" +
-            "      },\n" +
-            "      {\n" +
-            "        \"id\": \"society\\/2017\\/dec\\/19\\/churches-offering-shelter-from-the-storm\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"society\",\n" +
-            "        \"sectionName\": \"Society\",\n" +
-            "        \"webPublicationDate\": \"2017-12-19T18:23:04Z\",\n" +
-            "        \"webTitle\": \"Churches offering shelter from the storm | Brief letters\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/society\\/2017\\/dec\\/19\\/churches-offering-shelter-from-the-storm\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/society\\/2017\\/dec\\/19\\/churches-offering-shelter-from-the-storm\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/news\",\n" +
-            "        \"pillarName\": \"News\"\n" +
-            "      },\n" +
-            "      {\n" +
-            "        \"id\": \"housing-network\\/2017\\/aug\\/17\\/waitrose-blameless-evictions-section-21-housing-homelessness\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"housing-network\",\n" +
-            "        \"sectionName\": \"Housing Network\",\n" +
-            "        \"webPublicationDate\": \"2017-08-17T06:32:01Z\",\n" +
-            "        \"webTitle\": \"A new Waitrose means more evictions, what should be done? | Dan Wilson Craw\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/housing-network\\/2017\\/aug\\/17\\/waitrose-blameless-evictions-section-21-housing-homelessness\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/housing-network\\/2017\\/aug\\/17\\/waitrose-blameless-evictions-section-21-housing-homelessness\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/news\",\n" +
-            "        \"pillarName\": \"News\"\n" +
-            "      },\n" +
-            "      {\n" +
-            "        \"id\": \"us-news\\/2017\\/apr\\/15\\/eugene-oregon-dog-ban-homeless\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"us-news\",\n" +
-            "        \"sectionName\": \"US news\",\n" +
-            "        \"webPublicationDate\": \"2017-04-15T10:00:22Z\",\n" +
-            "        \"webTitle\": \"Oregon city's dog ban condemned as crackdown on homeless people\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/us-news\\/2017\\/apr\\/15\\/eugene-oregon-dog-ban-homeless\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/us-news\\/2017\\/apr\\/15\\/eugene-oregon-dog-ban-homeless\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/news\",\n" +
-            "        \"pillarName\": \"News\"\n" +
-            "      },\n" +
-            "      {\n" +
-            "        \"id\": \"world\\/2017\\/may\\/27\\/canada-homelessness-housing-data-too-big-small-homes\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"world\",\n" +
-            "        \"sectionName\": \"World news\",\n" +
-            "        \"webPublicationDate\": \"2017-05-27T10:30:25Z\",\n" +
-            "        \"webTitle\": \"Canada's 'us and them cities': data shows most homes are too small \\u2013 or too big\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/world\\/2017\\/may\\/27\\/canada-homelessness-housing-data-too-big-small-homes\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/world\\/2017\\/may\\/27\\/canada-homelessness-housing-data-too-big-small-homes\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/news\",\n" +
-            "        \"pillarName\": \"News\"\n" +
-            "      },\n" +
-            "      {\n" +
-            "        \"id\": \"us-news\\/2016\\/jul\\/11\\/san-diego-homeless-killing-spree-suspect-released\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"us-news\",\n" +
-            "        \"sectionName\": \"US news\",\n" +
-            "        \"webPublicationDate\": \"2016-07-11T23:39:06Z\",\n" +
-            "        \"webTitle\": \"San Diego police still searching for suspected serial killer of homeless\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/us-news\\/2016\\/jul\\/11\\/san-diego-homeless-killing-spree-suspect-released\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/us-news\\/2016\\/jul\\/11\\/san-diego-homeless-killing-spree-suspect-released\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/news\",\n" +
-            "        \"pillarName\": \"News\"\n" +
-            "      },\n" +
-            "      {\n" +
-            "        \"id\": \"politics\\/2017\\/may\\/31\\/cambridge-the-housing-crisis-is-at-breaking-point\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"politics\",\n" +
-            "        \"sectionName\": \"Politics\",\n" +
-            "        \"webPublicationDate\": \"2017-05-31T11:46:20Z\",\n" +
-            "        \"webTitle\": \"Cambridge: 'The housing crisis is at breaking point'\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/politics\\/2017\\/may\\/31\\/cambridge-the-housing-crisis-is-at-breaking-point\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/politics\\/2017\\/may\\/31\\/cambridge-the-housing-crisis-is-at-breaking-point\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/news\",\n" +
-            "        \"pillarName\": \"News\"\n" +
-            "      },\n" +
-            "      {\n" +
-            "        \"id\": \"society\\/2017\\/mar\\/06\\/housing-benefit-cuts-young-people-homelessness-landlords\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"society\",\n" +
-            "        \"sectionName\": \"Society\",\n" +
-            "        \"webPublicationDate\": \"2017-03-06T15:07:16Z\",\n" +
-            "        \"webTitle\": \"Housing benefit cuts 'put young people at risk of homelessness'\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/society\\/2017\\/mar\\/06\\/housing-benefit-cuts-young-people-homelessness-landlords\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/society\\/2017\\/mar\\/06\\/housing-benefit-cuts-young-people-homelessness-landlords\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/news\",\n" +
-            "        \"pillarName\": \"News\"\n" +
-            "      },\n" +
-            "      {\n" +
-            "        \"id\": \"commentisfree\\/2016\\/mar\\/07\\/homelessness-is-a-national-emergency-the-crisis-demands-federal-leadership\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"commentisfree\",\n" +
-            "        \"sectionName\": \"Opinion\",\n" +
-            "        \"webPublicationDate\": \"2016-03-07T16:26:57Z\",\n" +
-            "        \"webTitle\": \"Homelessness is a national emergency \\u2013 the crisis demands federal leadership | Edward B Murray\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/commentisfree\\/2016\\/mar\\/07\\/homelessness-is-a-national-emergency-the-crisis-demands-federal-leadership\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/commentisfree\\/2016\\/mar\\/07\\/homelessness-is-a-national-emergency-the-crisis-demands-federal-leadership\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/opinion\",\n" +
-            "        \"pillarName\": \"Opinion\"\n" +
-            "      },\n" +
-            "      {\n" +
-            "        \"id\": \"us-news\\/2016\\/jan\\/31\\/sleeping-rough-in-seattle-homeless-crisis-exposes-dark-side-of-affluent-microsoft-city\",\n" +
-            "        \"type\": \"article\",\n" +
-            "        \"sectionId\": \"us-news\",\n" +
-            "        \"sectionName\": \"US news\",\n" +
-            "        \"webPublicationDate\": \"2016-01-31T00:02:12Z\",\n" +
-            "        \"webTitle\": \"Sleeping rough in Seattle: homeless crisis exposes dark side of hi-tech city\",\n" +
-            "        \"webUrl\": \"https:\\/\\/www.theguardian.com\\/us-news\\/2016\\/jan\\/31\\/sleeping-rough-in-seattle-homeless-crisis-exposes-dark-side-of-affluent-microsoft-city\",\n" +
-            "        \"apiUrl\": \"https:\\/\\/content.guardianapis.com\\/us-news\\/2016\\/jan\\/31\\/sleeping-rough-in-seattle-homeless-crisis-exposes-dark-side-of-affluent-microsoft-city\",\n" +
-            "        \"isHosted\": false,\n" +
-            "        \"pillarId\": \"pillar\\/news\",\n" +
-            "        \"pill";
-
 
     /**
      * Create a private constructor because no one should ever create a {@link QueryUtils} object.
@@ -209,8 +55,7 @@ public final class QueryUtils {
         }
 
         // Extract relevant fields from the JSON response and create a list of {@link Article}s
-        //TODO: test partsing by changing this to testJSON string from "jsonResponse"
-        List<Article> Articles = extractFeatureFromJson(testJSON);
+        List<Article> Articles = extractFeatureFromJson(jsonResponse);
 
         // Return the list of {@link Article}s
         return Articles;
@@ -319,9 +164,11 @@ public final class QueryUtils {
             // Create a JSONObject from the JSON response string
             JSONObject baseJsonResponse = new JSONObject(ArticlesJSON);
 
-            // Extract the JSONArray associated with the key called "results",
+            // Extract the JSONArray associated with the key called "reponse",
             // which represents a list of items (or Articles).
-            JSONArray articlesArray = baseJsonResponse.getJSONArray("results");
+            JSONObject response = baseJsonResponse.getJSONObject("response");
+
+            JSONArray articlesArray = response.getJSONArray("results");
 
             // For each Article in the ArticleArray, create an {@link Article} object
             for (int i = 0; i < articlesArray.length(); i++) {

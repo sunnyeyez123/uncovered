@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 // Get a reference to the ConnectivityManager to check state of network connectivity
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
-//TODO: update manifest for internet persmissons
         // Get details on the currently active default data network
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 

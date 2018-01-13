@@ -10,27 +10,27 @@ public class Article {
 
 
     public Article(String title, String section, String url){
-        title=mTitle;
-        section= mSection;
-        url=mUrl;
+        mTitle = title;
+        mSection = section;
+     mUrl = url;
 
 
     }
 
     public Article(String title, String section,String author,String url){
-        title=mTitle;
-        section= mSection;
-        url=mUrl;
-        author = mAuthor;
+        mTitle = title;
+        mSection = section;
+        mUrl = url;
+        mAuthor = author;
 
     }
 
     public Article(String title, String section, String author, String published,String url){
-        title=mTitle;
-        section= mSection;
-        url=mUrl;
-        published=mPublished;
-        author=mAuthor;
+        mTitle = title;
+        mSection = section;
+        mUrl = url;
+        mAuthor = author;
+        mPublished=published;
     }
 
 

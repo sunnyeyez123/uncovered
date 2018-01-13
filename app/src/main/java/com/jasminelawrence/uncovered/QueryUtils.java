@@ -29,7 +29,6 @@ public final class QueryUtils {
 
     public static final String LOG_TAG = MainActivity.class.getName();
 
-    public static final String testJson ="{\"response\":{\"status\":\"ok\",\"userTier\":\"developer\",\"total\":97,\"startIndex\":1,\"pageSize\":3,\"currentPage\":1,\"pages\":33,\"orderBy\":\"relevance\",\"results\":[{\"id\":\"us-news/2017/may/08/homeless-san-francisco-100m-donation-tipping-point\",\"type\":\"article\",\"sectionId\":\"us-news\",\"sectionName\":\"US news\",\"webPublicationDate\":\"2017-05-08T20:51:51Z\",\"webTitle\":\"San Francisco gets record-setting $100m donation to end homelessness\",\"webUrl\":\"https://www.theguardian.com/us-news/2017/may/08/homeless-san-francisco-100m-donation-tipping-point\",\"apiUrl\":\"https://content.guardianapis.com/us-news/2017/may/08/homeless-san-francisco-100m-donation-tipping-point\",\"isHosted\":false,\"pillarId\":\"pillar/news\",\"pillarName\":\"News\"},{\"id\":\"housing-network/2018/jan/02/2018-global-housing-crisis-us-canada-homelessness\",\"type\":\"article\",\"sectionId\":\"housing-network\",\"sectionName\":\"Housing Network\",\"webPublicationDate\":\"2018-01-02T12:20:39Z\",\"webTitle\":\"We must declare 2018 the year of the right to housing | Leilani Farha\",\"webUrl\":\"https://www.theguardian.com/housing-network/2018/jan/02/2018-global-housing-crisis-us-canada-homelessness\",\"apiUrl\":\"https://content.guardianapis.com/housing-network/2018/jan/02/2018-global-housing-crisis-us-canada-homelessness\",\"isHosted\":false,\"pillarId\":\"pillar/news\",\"pillarName\":\"News\"},{\"id\":\"us-news/2018/jan/10/chronicling-homelessness-bussed-out-behind-the-scenes\",\"type\":\"article\",\"sectionId\":\"us-news\",\"sectionName\":\"US news\",\"webPublicationDate\":\"2018-01-10T23:10:11Z\",\"webTitle\":\"Chronicling homelessness: inside our investigation on homeless bus programs\",\"webUrl\":\"https://www.theguardian.com/us-news/2018/jan/10/chronicling-homelessness-bussed-out-behind-the-scenes\",\"apiUrl\":\"https://content.guardianapis.com/us-news/2018/jan/10/chronicling-homelessness-bussed-out-behind-the-scenes\",\"isHosted\":false,\"pillarId\":\"pillar/news\",\"pillarName\":\"News\"}]}}";
     /**
      * Create a private constructor because no one should ever create a {@link QueryUtils} object.
      * This class is only meant to hold static variables and methods, which can be accessed
@@ -55,7 +54,7 @@ public final class QueryUtils {
         }
 
         // Extract relevant fields from the JSON response and create a list of {@link Article}s
-        List<Article> Articles = extractFeatureFromJson(testJson);
+        List<Article> Articles = extractFeatureFromJson(jsonResponse);
 
         // Return the list of {@link Article}s
         return Articles;

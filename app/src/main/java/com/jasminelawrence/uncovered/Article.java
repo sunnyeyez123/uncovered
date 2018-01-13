@@ -32,4 +32,25 @@ public class Article {
         published=mPublished;
         author=mAuthor;
     }
+
+
+    public String getTitle() {
+        return mTitle;
+    }
+
+    public String getSection() {
+        return mSection;
+    }
+
+    public String getAuthor() {
+        return mAuthor;
+    }
+
+    public String getPublished() {
+        return mPublished;
+    }
+
+    public String getUrl() {
+        return mUrl;
+    }
 }
